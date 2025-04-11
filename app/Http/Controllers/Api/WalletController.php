@@ -57,12 +57,6 @@ class WalletController extends Controller
 
     public function verify(Request $request)
     {
-        $request->validate([
-            'razorpay_payment_id' => 'required',
-            'razorpay_order_id' => 'required',
-            'razorpay_signature' => 'required',
-        ]);
-
 
         $validator = \Validator::make($request->all(), [
             'razorpay_payment_id' => 'required',
