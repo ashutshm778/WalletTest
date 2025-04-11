@@ -16,5 +16,5 @@ order amount create from this api by using razorpay
 verify signature and amount and add balance to user waller by this api
  http://127.0.0.1:8000/api/wallet/recharge/wallet/verify (post)
 
- for direct balance update user this api without razorpay
+ for direct balance update use this api without razorpay
   http://127.0.0.1:8000/api/wallet/recharge/withoutRazorpay (post)
