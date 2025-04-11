@@ -16,15 +16,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['namespace' => 'App\Http\Controllers\Api'], function () {
 
-    Route::get('/user', 'AuthController@user');
 
-    Route::post('/user-register', 'AuthController@registerUser');
+    Route::post('/user-register', 'AuthController@registerUser'); // user register
 
     Route::middleware('auth:sanctum')->group(function () {
-        Route::post('/wallet/recharge', 'WalletController@recharge');
-        Route::post('/wallet/verify','WalletController@verify');
+        Route::post('/wallet/recharge', 'WalletController@recharge'); //by razorpay
+        Route::post('/wallet/verify','WalletController@verify'); //by razorpay
 
-        Route::post('/wallet/recharge/withoutRazorpay','WalletController@walletRecharge');
+        Route::post('/wallet/recharge/withoutRazorpay','WalletController@walletRecharge'); // by manual
     });
 
 });
