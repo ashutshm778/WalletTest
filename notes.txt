@@ -1,0 +1,20 @@
+first of all setup the project from git.
+run composer update.
+create database like wallet_test.
+create .env file.
+connect database.
+run php artisan migrate.
+place this key and secret in your .env file
+  RAZORPAY_KEY=rzp_test_Qoky5YiVD8wzKA
+  RAZORPAY_SECRET=f8QlGsgUh6ZFBe1Rs4pSSPS2
+register user by api
+  http://127.0.0.1:8000/api/user-register (post)
+   parameter are email and password.
+use basic auth token obtained from register api for wallet rechage api
+order amount create from this api by using razorpay
+ http://127.0.0.1:8000/api/wallet/recharge (post)
+verify signature and amount and add balance to user waller by this api
+ http://127.0.0.1:8000/api/wallet/recharge/wallet/verify (post)
+
+ for direct balance update user this api without razorpay
+  http://127.0.0.1:8000/api/wallet/recharge/withoutRazorpay (post)
